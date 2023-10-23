@@ -11,9 +11,11 @@ app.use(express.json());
 app.use(express.urlencoded({extendended: true}));
 
 // Routes
-// const apiRoutes =
+const apiRoutes = require("./routes/api-routes");
+app.use(apiRoutes);
 
-// const htmlRoutes = 
+const htmlRoutes = require("./routes/html-routes");
+app.use(htmlRoutes);
 
 // Server listener
 app.listen(PORT, () =>
