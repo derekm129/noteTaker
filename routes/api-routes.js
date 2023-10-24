@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-const db = require('../db/db.json');
+let db = require('../db/db.json');
 // Gives notes random id's
 const{v4: uuidv4} = require('uuid');
 
@@ -22,6 +22,17 @@ router.post('/api/notes', (req, res) => {
     db.push(newNote);
     fs.writeFileSync('./db/db.json', JSON.stringify(db));
     res.json(db);
+});
+
+// DELETE request
+router.delete('/api/notes/:id', (req, res) => {
+    const noteId = req.params.id;
+    db = db.filter(note => note.id !== noteId);
+    fs.writeFileSync('./db/db.json', JSON.stringify(db));
+    // if (db.length === 0) {
+    //     fs.writeFileSync('./db/db.json', '[]');
+    // }
+    res.JSON(db);
 });
 
 module.exports = router;
