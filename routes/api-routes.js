@@ -29,6 +29,7 @@ router.delete('/api/notes/:id', (req, res) => {
     let noteId = req.params.id;
     let newDb = db.filter(note => note.id !== noteId);
     fs.writeFileSync('./db/db.json', JSON.stringify(newDb));
+    console.log(newDb);
     res.json(newDb);
 });
 
