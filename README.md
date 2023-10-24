@@ -11,7 +11,7 @@
 ## Usage
 - Use to create and save notes.
 
-![Screenshot](./assets/images/screenshot.png)
+![Screenshot]()
 
 ## Credits
 N/A
