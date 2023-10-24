@@ -6,7 +6,7 @@
 - This app allows the user to create and save notes.
 - I learned from making this application how to use an Express.js backend.
 ## Installation
-- N/A
+- This application requires uuidv4, Node.js, and Express.js.
 
 ## Usage
 - Use to create and save notes.
